@@ -952,6 +952,63 @@ textarea {
   margin-top: 4px;
 }
 
+.project__result {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-left: 14px;
+  border-left: 2px solid var(--color-accent);
+}
+
+.project__result-label {
+  color: var(--color-teal-dark);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.project__result p {
+  color: var(--color-ink);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.project--dark .project__result {
+  border-left-color: var(--color-mint);
+}
+
+.project--dark .project__result-label {
+  color: var(--color-mint);
+}
+
+.project--dark .project__result p {
+  color: #FFFFFF;
+}
+
+/* Logo do cliente ao lado do título */
+.project__brand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.project__brand > div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.project__logo {
+  flex: none;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, .08);
+  object-fit: cover;
+}
+
 .project__footer {
   display: flex;
   flex-wrap: wrap;

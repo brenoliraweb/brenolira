@@ -21,6 +21,6 @@ npx serve .
 
 ## Pendências de conteúdo
 
-- Capturas dos projetos: troque os placeholders `Captura do site` e `Captura do catálogo` por `<img>` (há um comentário no HTML indicando onde).
+- Logo do Rancho do Maia: a versão atual (`assets/img/rancho-do-maia-logo.jpg`) tem só 150×150 px, tirada do Instagram. Troque por um arquivo maior se conseguir com o cliente.
 - Fotos da seção Sobre: `Foto trabalhando` e `Foto do setup`.
 - Currículo: coloque o PDF em `assets/curriculo.pdf`.
