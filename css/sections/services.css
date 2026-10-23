@@ -1,0 +1,36 @@
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
+  gap: 14px;
+}
+
+.service {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 28px;
+  border-radius: 24px;
+  background: var(--color-sand);
+}
+
+.service__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.service__num {
+  color: #8A877F;
+  font-size: 13px;
+}
+
+.icon-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  background: var(--color-dark);
+  color: var(--color-mint);
+}

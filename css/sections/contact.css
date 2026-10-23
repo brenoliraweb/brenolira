@@ -1,0 +1,96 @@
+.form {
+  display: flex;
+  flex-basis: 440px;
+  flex-direction: column;
+  gap: 14px;
+  padding: clamp(24px, 3.4vw, 40px);
+  border-radius: 28px;
+  background: #F6F6F4;
+}
+
+.form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: #3F3F46;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.form__input {
+  min-height: 50px;
+  padding: 0 16px;
+  border: 1px solid #E4E4E1;
+  border-radius: 14px;
+  background: #FFFFFF;
+  color: var(--color-ink);
+  font-size: 16px;
+  transition: border-color .2s var(--ease);
+}
+
+.form__input:focus {
+  border-color: var(--color-accent);
+  outline: none;
+}
+
+.form__choices {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.form__legend {
+  margin-bottom: 8px;
+  padding: 0;
+}
+
+.choices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.choice {
+  position: relative;
+  cursor: pointer;
+}
+
+.choice input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.choice span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 16px;
+  border: 1px solid #E4E4E1;
+  border-radius: var(--radius-pill);
+  background: #FFFFFF;
+  color: var(--color-ink);
+  font-size: 15px;
+  font-weight: 500;
+  transition: background-color .2s var(--ease), border-color .2s var(--ease), color .2s var(--ease);
+}
+
+.choice:hover span {
+  border-color: var(--color-accent);
+}
+
+.choice input:checked + span {
+  border-color: var(--color-ink);
+  background: var(--color-ink);
+  color: #FFFFFF;
+}
+
+.choice input:focus-visible + span {
+  outline: 2px solid var(--color-teal);
+  outline-offset: 2px;
+}
+
+.form__textarea {
+  padding: 14px 16px;
+  resize: vertical;
+}

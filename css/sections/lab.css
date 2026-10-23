@@ -1,0 +1,33 @@
+.lab {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
+  gap: 16px;
+}
+
+.lab-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 24px;
+  border-radius: 22px;
+  background: #FFFFFF;
+  box-shadow: 0 0 0 1px rgba(17, 17, 17, .06);
+}
+
+.lab-card .card-title {
+  margin-top: 2px;
+}
+
+.lab-card__footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px 12px;
+  margin-top: auto;
+}
+
+.lab-card__stack {
+  color: var(--color-teal-text);
+  font-size: 12px;
+}

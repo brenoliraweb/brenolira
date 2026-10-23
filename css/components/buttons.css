@@ -1,0 +1,157 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 0;
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform .2s var(--ease), background-color .2s var(--ease);
+}
+
+.btn:active {
+  transform: scale(.97);
+}
+
+.btn--sm {
+  min-height: 44px;
+  padding: 0 20px;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.btn--md {
+  min-height: 48px;
+  padding: 0 22px;
+  gap: 8px;
+  font-size: 15px;
+}
+
+.btn--lg {
+  min-height: 52px;
+  padding: 0 26px;
+  font-size: 16px;
+}
+
+.btn--block {
+  width: 100%;
+  min-height: 54px;
+  margin-top: 6px;
+  font-size: 16px;
+}
+
+.btn--dark {
+  background: var(--color-ink);
+  color: #FFFFFF;
+}
+
+.btn--dark:hover {
+  background: #2A2A2E;
+  color: #FFFFFF;
+}
+
+.btn--outline {
+  background: #FFFFFF;
+  color: var(--color-ink);
+  box-shadow: inset 0 0 0 1.5px #D7E7E5;
+}
+
+.btn--outline:hover {
+  color: var(--color-ink);
+  box-shadow: inset 0 0 0 1.5px var(--color-accent);
+}
+
+.btn--light {
+  background: #FFFFFF;
+  color: var(--color-ink);
+}
+
+.btn--light:hover {
+  background: #E4E4E7;
+  color: var(--color-ink);
+}
+
+.btn--ghost {
+  background: transparent;
+  color: #FFFFFF;
+  box-shadow: inset 0 0 0 1.5px #3A3A40;
+}
+
+.btn--ghost:hover {
+  color: #FFFFFF;
+  box-shadow: inset 0 0 0 1.5px #6A6A72;
+}
+
+.btn__dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 2px;
+  background: var(--color-accent);
+}
+
+.btn--lg .btn__dot {
+  width: 8px;
+  height: 8px;
+}
+
+.round-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border: 0;
+  border-radius: 50%;
+  background: #F2F2F0;
+  color: var(--color-ink);
+  cursor: pointer;
+  transition: background-color .2s var(--ease), opacity .2s var(--ease);
+}
+
+.round-btn:hover {
+  background: #E6E6E3;
+}
+
+.round-btn--dark {
+  background: var(--color-ink);
+  color: #FFFFFF;
+}
+
+.round-btn--dark:hover {
+  background: #2A2A2E;
+}
+
+.round-btn:disabled {
+  opacity: .4;
+  cursor: default;
+}
+
+.link-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  color: var(--color-ink);
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.link-arrow svg {
+  transition: transform .2s var(--ease);
+}
+
+.link-arrow:hover svg {
+  transform: translate(2px, -2px);
+}
+
+.link-arrow--sm {
+  color: var(--color-teal-dark);
+  font-size: 14px;
+}
+
+.text-link {
+  font-weight: 600;
+}

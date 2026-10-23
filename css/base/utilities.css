@@ -1,0 +1,30 @@
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+}
+
+.container--narrow {
+  max-width: 1000px;
+}
+
+.mono {
+  font-family: var(--font-mono);
+}
+
+.text-accent {
+  color: var(--color-teal);
+}
+
+.text-mint {
+  color: var(--color-mint);
+}
+
+.lift {
+  transition: transform .35s ease, box-shadow .35s ease;
+}
+
+.lift:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 48px rgba(17, 17, 17, .08);
+}

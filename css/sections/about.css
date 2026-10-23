@@ -1,0 +1,137 @@
+.about {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: clamp(40px, 6vw, 88px);
+}
+
+.about__media {
+  display: grid;
+  flex: 1 1 440px;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 14px;
+  min-width: 0;
+}
+
+.about__photo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 12px;
+  border-radius: 24px;
+  background: var(--color-sand);
+  color: var(--color-muted);
+  font-size: 13px;
+  text-align: center;
+}
+
+.about__photo--main {
+  grid-row: span 2;
+  flex-direction: column;
+  gap: 10px;
+  aspect-ratio: 3 / 4;
+  padding: 16px;
+  border-radius: 28px;
+  background: var(--color-teal-soft);
+  color: var(--color-teal-text);
+  font-size: 14px;
+}
+
+.about__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about__photo:has(img) {
+  padding: 0;
+}
+
+.about__stat {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 4px;
+  padding: 18px;
+  border-radius: 24px;
+  background: var(--color-dark);
+  color: #FFFFFF;
+}
+
+.about__year {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -.04em;
+}
+
+.about__caption {
+  color: #B8B8BD;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.about__text {
+  display: flex;
+  flex: 1 1 440px;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 0;
+}
+
+.about__text .section-text {
+  max-width: none;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  margin-top: 8px;
+  padding: 0;
+  list-style: none;
+}
+
+.timeline__item {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 0;
+  border-top: 1px solid var(--color-line);
+}
+
+.timeline__item:last-child {
+  border-bottom: 1px solid var(--color-line);
+}
+
+.timeline__role {
+  font-weight: 600;
+}
+
+.timeline__date {
+  flex: none;
+  color: var(--color-muted);
+  font-size: 15px;
+}
+
+.timeline__date--now {
+  color: var(--color-teal-dark);
+  font-weight: 600;
+}
+
+.about__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 24px;
+}
+
+@media (max-width: 480px) {
+  .about__media {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .timeline__item {
+    flex-direction: column;
+    gap: 2px;
+  }
+}

@@ -7,18 +7,28 @@ Guia do portfólio **brenolira.dev**. Feito em HTML, CSS e JavaScript puros, sem
 | Arquivo | O que tem |
 |---|---|
 | `index.html` | Todo o conteúdo do site |
-| `css/style.css` | Visual: cores e fontes no começo (`:root`), celular no final |
-| `js/main.js` | Abertura, etapas do "Como funciona", dúvidas, formulário do WhatsApp e menu do celular |
+| `css/global.css` | Importa todos os outros CSS, na ordem certa |
+| `css/base/` | `variables.css` (cores, fontes, espaçamentos), `reset.css` e `utilities.css` |
+| `css/components/` | `buttons.css` e `cards.css`, usados em várias seções |
+| `css/layout/sections.css` | Padrão comum das seções (títulos, espaçamentos, colunas) |
+| `css/sections/` | Um arquivo por seção: `intro`, `header`, `hero`, `projects`, `lab`, `services`, `process`, `plan`, `about`, `faq`, `contact` e `footer` |
+| `js/main.js` | Importa e liga cada módulo |
+| `js/modules/` | Um arquivo por funcionalidade: `intro`, `hero-grid`, `process`, `faq`, `mobile-menu`, `contact-form`, `active-nav` e `year` |
 | `curriculo/` | Currículo em HTML, de onde sai o PDF |
 | `assets/img/` | Fotos e capturas dos projetos (formato WebP) |
 | `assets/icons/` e `favicon.ico` | Ícones do site |
 | `robots.txt`, `sitemap.xml`, `site.webmanifest` | Arquivos para o Google e para o celular |
 
-Para ver o site no computador:
+Cada seção tem as regras de celular (`@media`) no próprio arquivo, no final.
+
+Para ver o site no computador (precisa de servidor; abrir o `index.html` direto com dois cliques não carrega o JavaScript):
 
 ```bash
 npx serve .
 ```
+
+**Novo arquivo CSS:** crie em `css/sections/` e adicione uma linha `@import` no `css/global.css`.
+**Novo módulo JS:** crie em `js/modules/` com `export function initAlgo() {}` e importe e chame no `js/main.js`.
 
 ---
 
@@ -51,9 +61,9 @@ npx serve .
 
 **Linha do tempo do Sobre**: lista `<ul class="timeline">` no `index.html`.
 
-**Cores**: no começo do `css/style.css`, dentro de `:root`. A cor principal é `--color-accent` (#12B5A6).
+**Cores**: em `css/base/variables.css`, dentro de `:root`. A cor principal é `--color-accent` (#12B5A6).
 
-**WhatsApp**: o número aparece no `index.html` (links `wa.me`) e no `js/main.js` (`WHATSAPP_NUMBER`). Troque nos dois.
+**WhatsApp**: o número aparece no `index.html` (links `wa.me`) e no `js/modules/contact-form.js` (`WHATSAPP_NUMBER`). Troque nos dois.
 
 **Opções do formulário** ("O que você precisa"): os botões `<label class="choice">` dentro do formulário em `id="contato"`.
 
