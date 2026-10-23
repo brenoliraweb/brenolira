@@ -19,7 +19,7 @@ Abra o `index.html` no navegador, ou sirva a pasta:
 npx serve .
 ```
 
-## Pendências de conteúdo
+## Conteúdo
 
-- Fotos da seção Sobre: `Foto trabalhando` e `Foto do setup`.
-- Currículo: coloque o PDF em `assets/curriculo.pdf`.
+- Fotos em `assets/img/` (WebP, já recortadas para a seção Sobre).
+- Currículo em `assets/curriculo-breno-lira-rocha.pdf`. Para atualizar, substitua o arquivo mantendo o nome.

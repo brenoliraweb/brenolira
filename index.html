@@ -313,16 +313,64 @@
       </div>
     </section>
 
+    <!-- Plano mensal -->
+    <section class="section" id="plano">
+      <div class="container split">
+        <header class="split__aside section-head">
+          <p class="eyebrow">/plano-mensal</p>
+          <h2 class="section-title">Seu site cuidado, todo mês.</h2>
+          <p class="section-text">Os 30 dias de suporte acabam, o site continua. Com o plano mensal, você não precisa se preocupar com hospedagem, segurança ou atualizações.</p>
+          <a class="btn btn--dark btn--md plan__cta" href="#contato">
+            <span class="btn__dot" aria-hidden="true"></span>Quero saber mais
+          </a>
+        </header>
+
+        <div class="split__main plan">
+          <ul class="plan__list">
+            <li class="plan__item">
+              <span class="plan__icon"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+              <div>
+                <h3 class="plan__title">Hospedagem e domínio</h3>
+                <p class="plan__text">O site fica no ar e eu cuido da renovação e das configurações.</p>
+              </div>
+            </li>
+            <li class="plan__item">
+              <span class="plan__icon"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+              <div>
+                <h3 class="plan__title">Segurança e cópias</h3>
+                <p class="plan__text">Certificado HTTPS ativo e cópias do site guardadas.</p>
+              </div>
+            </li>
+            <li class="plan__item">
+              <span class="plan__icon"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+              <div>
+                <h3 class="plan__title">Pequenas atualizações</h3>
+                <p class="plan__text">Troco textos, fotos, preços e contatos quando você precisar.</p>
+              </div>
+            </li>
+            <li class="plan__item">
+              <span class="plan__icon"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+              <div>
+                <h3 class="plan__title">Suporte direto</h3>
+                <p class="plan__text">Você fala comigo pelo WhatsApp, sem fila e sem chamado.</p>
+              </div>
+            </li>
+          </ul>
+          <p class="plan__note">O valor depende do tamanho do site e é combinado na proposta.</p>
+        </div>
+      </div>
+    </section>
+
     <!-- Sobre -->
     <section class="section" id="sobre">
       <div class="container about">
         <div class="about__media">
-          <!-- Troque o placeholder por: <img src="assets/img/breno.webp" alt="Breno Lira trabalhando no computador"> -->
           <div class="about__photo about__photo--main">
-            <svg aria-hidden="true" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="12" cy="11" r="3"/><path d="M6 20c1.5-3 3.5-4.5 6-4.5s4.5 1.5 6 4.5"/></svg>
-            <span>Foto trabalhando</span>
+            <img src="assets/img/breno-trabalhando.webp" width="720" height="960" loading="lazy" decoding="async" alt="Breno Lira sorrindo, de boné e crachá, apoiado numa cerca durante o trabalho no Rancho do Maia.">
           </div>
-          <div class="about__photo about__photo--small">Foto do setup</div>
+          <div class="about__photo about__photo--small">
+            <img src="assets/img/breno-retrato.webp" width="400" height="400" loading="lazy" decoding="async" alt="Retrato de Breno Lira em estúdio, com luz azul e vermelha.">
+          </div>
           <div class="about__stat">
             <span class="about__year">2023</span>
             <span class="about__caption">primeira linha de código</span>
@@ -368,7 +416,7 @@
           </details>
           <details class="faq__item">
             <summary class="faq__question">E depois que o site estiver no ar?<span class="faq__icon" aria-hidden="true"></span></summary>
-            <p class="faq__answer">Você tem 30 dias de suporte incluso. Depois, se quiser, ofereço um plano mensal de hospedagem e manutenção.</p>
+            <p class="faq__answer">Você tem 30 dias de suporte incluso. Depois, se quiser, pode seguir com o <a class="text-link" href="#plano">plano mensal</a> de hospedagem e manutenção.</p>
           </details>
           <details class="faq__item">
             <summary class="faq__question">Você atende fora de Maceió?<span class="faq__icon" aria-hidden="true"></span></summary>
@@ -397,6 +445,7 @@
               <option>Site institucional</option>
               <option>Catálogo online</option>
               <option>Sistema interno</option>
+              <option>Plano mensal</option>
               <option>Ainda não sei</option>
             </select>
           </label>
@@ -422,8 +471,7 @@
         </div>
         <div class="footer__actions">
           <a class="btn btn--light btn--md" href="https://wa.me/5582991437312" target="_blank" rel="noopener">Chamar no WhatsApp</a>
-          <!-- Coloque o PDF em assets/curriculo.pdf -->
-          <a class="btn btn--ghost btn--md" href="assets/curriculo.pdf" download>Baixar currículo</a>
+          <a class="btn btn--ghost btn--md" href="assets/curriculo-breno-lira-rocha.pdf" download="Curriculo_Breno_Lira_Rocha.pdf">Baixar currículo</a>
         </div>
       </div>
 
