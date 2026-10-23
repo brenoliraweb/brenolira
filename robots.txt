@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /curriculo/
 
-Sitemap: https://brenolira.vercel.app/sitemap.xml
+Sitemap: https://brenolira.dev/sitemap.xml

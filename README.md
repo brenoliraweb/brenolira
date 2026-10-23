@@ -33,12 +33,12 @@ O currículo tem duas páginas A4 fixas. Se adicionar muito conteúdo, confira s
 
 ## SEO e domínio
 
-O endereço oficial hoje é `https://brenolira.vercel.app`. Quando o domínio (provavelmente `brenolira.dev`) estiver no ar, troque o endereço em:
+O endereço oficial do site é `https://brenolira.dev`. Ele aparece em:
 
 - `index.html`: canonical, `og:url`, `og:image`, `twitter:image` e o JSON-LD
 - `robots.txt` (linha do Sitemap)
 - `sitemap.xml`
 
-Depois, cadastre o site no [Google Search Console](https://search.google.com/search-console) e envie o `sitemap.xml`.
+Antes de divulgar, o domínio precisa estar comprado e apontado para a Vercel. Depois, cadastre o site no [Google Search Console](https://search.google.com/search-console) e envie o `sitemap.xml`.
 
 Ícones: "bl." na fonte Montserrat, igual ao logo. Os PNGs em `assets/icons/` e o `favicon.ico` saem da versão de 512 px (`assets/icons/icon-512.png`).
