@@ -1,0 +1,366 @@
+/* Currículo: mesma identidade do site (cores, fontes e títulos em /mono).
+   Feito para A4. O PDF é gerado pelo Chrome (veja o README). */
+
+:root {
+  --ink: #111111;
+  --text: #4A4A50;
+  --muted: #6B6B72;
+  --line: #E6ECEB;
+  --teal: #0D9488;
+  --teal-dark: #0F766E;
+  --teal-soft: #E6F6F4;
+  --teal-bg: #F2FAF9;
+  --mint: #5EEAD4;
+  --accent: #12B5A6;
+  --dark: #0E0E10;
+
+  --font-display: "Montserrat", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+@page {
+  size: A4;
+  margin: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+body {
+  margin: 0;
+  background: #D9DEDD;
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 9pt;
+  line-height: 1.42;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, p, ul, dl, dd {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Folha A4 */
+.page {
+  display: flex;
+  flex-direction: column;
+  width: 210mm;
+  height: 297mm;
+  margin: 10mm auto;
+  overflow: hidden;
+  background: #FFFFFF;
+  box-shadow: 0 10px 40px rgba(17, 17, 17, .12);
+}
+
+@media print {
+  body {
+    background: #FFFFFF;
+  }
+
+  .page {
+    margin: 0;
+    box-shadow: none;
+    break-after: page;
+  }
+
+  .page:last-child {
+    break-after: auto;
+  }
+}
+
+/* Cabeçalho escuro com a grade do rodapé do site */
+.cv-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 7mm;
+  padding: 8mm 12mm;
+  background-color: var(--dark);
+  background-image:
+    linear-gradient(rgba(255, 255, 255, .04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, .04) 1px, transparent 1px);
+  background-size: 8mm 8mm;
+  color: #FFFFFF;
+}
+
+.cv-header__photo {
+  width: 26mm;
+  height: 26mm;
+  border-radius: 50%;
+  box-shadow: 0 0 0 1.2mm rgba(94, 234, 212, .35);
+  object-fit: cover;
+}
+
+.cv-header__eyebrow {
+  color: var(--mint);
+  font-family: var(--font-mono);
+  font-size: 9pt;
+}
+
+.cv-header__name {
+  margin-top: 1.5mm;
+  font-family: var(--font-display);
+  font-size: 26pt;
+  font-weight: 700;
+  letter-spacing: -.04em;
+  line-height: 1;
+}
+
+.cv-header__role {
+  margin-top: 2.5mm;
+  color: #C4C4C8;
+  font-size: 10pt;
+}
+
+.cv-header__brand {
+  position: absolute;
+  top: 8mm;
+  right: 12mm;
+  font-family: var(--font-display);
+  font-size: 10pt;
+  font-weight: 700;
+  letter-spacing: -.03em;
+}
+
+.cv-header__brand span {
+  color: var(--accent);
+}
+
+/* Corpo: coluna lateral + conteúdo */
+.cv-body {
+  display: grid;
+  flex: 1;
+  grid-template-columns: 66mm 1fr;
+}
+
+.cv-side {
+  display: flex;
+  flex-direction: column;
+  gap: 6mm;
+  padding: 8mm 6mm 8mm 11mm;
+  background-color: var(--teal-bg);
+  background-image: radial-gradient(rgba(13, 148, 136, .14) 1px, transparent 1px);
+  background-size: 4mm 4mm;
+}
+
+.cv-main {
+  display: flex;
+  flex-direction: column;
+  gap: 5mm;
+  padding: 8mm 12mm 8mm 8mm;
+}
+
+.cv-body--full .cv-side,
+.cv-body--full .cv-main {
+  padding-top: 11mm;
+}
+
+/* Página 2: lateral com pouco conteúdo, então o texto principal ganha espaço */
+.cv-body--full {
+  grid-template-columns: 56mm 1fr;
+}
+
+/* Títulos no estilo do site: /secao em mono */
+.side-title,
+.block-title {
+  display: flex;
+  align-items: center;
+  gap: 3mm;
+  margin-bottom: 3mm;
+  color: var(--teal-dark);
+  font-family: var(--font-mono);
+  font-size: 10pt;
+  font-weight: 500;
+}
+
+.block-title::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
+
+/* Coluna lateral */
+.side-list dt {
+  margin-top: 2.6mm;
+  color: var(--teal-dark);
+  font-size: 7.6pt;
+  font-weight: 600;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.side-list dt:first-child {
+  margin-top: 0;
+}
+
+.side-list dd {
+  margin-top: .6mm;
+  font-size: 8.6pt;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.side-list a {
+  border-bottom: 1px solid rgba(13, 148, 136, .35);
+}
+
+.side-bullets {
+  display: flex;
+  flex-direction: column;
+  gap: 2mm;
+  padding: 0;
+  list-style: none;
+  font-size: 9pt;
+}
+
+.side-bullets li,
+.entry__list li {
+  position: relative;
+  padding-left: 4mm;
+}
+
+/* Marcador quadradinho, igual ao ponto dos botões do site */
+.side-bullets li::before,
+.entry__list li::before {
+  content: "";
+  position: absolute;
+  top: .62em;
+  left: 0;
+  width: 1.5mm;
+  height: 1.5mm;
+  border-radius: .4mm;
+  background: var(--accent);
+}
+
+/* Conteúdo principal */
+.summary {
+  color: var(--text);
+  text-align: justify;
+}
+
+.entry {
+  break-inside: avoid;
+}
+
+.entry + .entry {
+  margin-top: 3.6mm;
+}
+
+.entry--compact + .entry--compact {
+  margin-top: 3mm;
+}
+
+.entry__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 4mm;
+}
+
+.entry__title {
+  font-family: var(--font-display);
+  font-size: 10.4pt;
+  font-weight: 700;
+  letter-spacing: -.02em;
+  line-height: 1.3;
+}
+
+.entry__date {
+  flex: none;
+  padding: .6mm 2.4mm;
+  border-radius: 999px;
+  background: #F2F2F0;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 7.6pt;
+  white-space: nowrap;
+}
+
+.entry__date--now {
+  background: var(--teal-soft);
+  color: var(--teal-dark);
+}
+
+.entry__meta {
+  margin-top: .8mm;
+  color: var(--muted);
+  font-size: 8.6pt;
+}
+
+.entry__stack {
+  margin-top: .8mm;
+  color: var(--teal-dark);
+  font-family: var(--font-mono);
+  font-size: 8pt;
+}
+
+.entry__list {
+  display: flex;
+  flex-direction: column;
+  gap: .6mm;
+  margin-top: 1.6mm;
+  padding: 0;
+  list-style: none;
+  color: var(--text);
+}
+
+.entry__list strong,
+.courses strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.courses {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  list-style: none;
+  color: var(--text);
+  font-size: 9pt;
+}
+
+.courses li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4mm;
+  padding: 1.3mm 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.courses li:first-child {
+  padding-top: 0;
+}
+
+/* Links que não devem quebrar no meio (e-mail, endereços) */
+.nowrap {
+  white-space: nowrap;
+}
+
+.side-note {
+  font-size: 8.6pt;
+  color: var(--text);
+}
+
+.side-note a {
+  display: inline-block;
+  margin-top: 1.5mm;
+  color: var(--teal-dark);
+  font-weight: 600;
+  border-bottom: 1px solid rgba(13, 148, 136, .35);
+}

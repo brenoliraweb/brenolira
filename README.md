@@ -22,4 +22,11 @@ npx serve .
 ## Conteúdo
 
 - Fotos em `assets/img/` (WebP, já recortadas para a seção Sobre).
-- Currículo em `assets/curriculo-breno-lira-rocha.pdf`. Para atualizar, substitua o arquivo mantendo o nome.
+- Currículo: o conteúdo fica em `curriculo/index.html` (com o mesmo visual do site). Depois de editar, gere o PDF com o Chrome e salve em `assets/curriculo-breno-lira-rocha.pdf`:
+
+```bash
+npx serve .
+"C:/Program Files/Google/Chrome/Application/chrome.exe" --headless=new --no-pdf-header-footer --virtual-time-budget=8000 --print-to-pdf="assets/curriculo-breno-lira-rocha.pdf" http://localhost:3000/curriculo/
+```
+
+O currículo tem duas páginas A4 fixas. Se adicionar muito conteúdo, confira se nada passou da borda.

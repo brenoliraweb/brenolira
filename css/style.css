@@ -1437,6 +1437,12 @@ a.work__link:hover .work__arrow {
   font-weight: 600;
 }
 
+.about__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 24px;
+}
+
 /* ---------- Dúvidas ---------- */
 .faq {
   display: flex;
