@@ -142,7 +142,7 @@
   <!-- Cabeçalho -->
   <header class="header">
     <div class="header__bar">
-      <a class="logo" href="#inicio">brenolira<span class="logo__dot">.dev</span></a>
+      <a class="logo" href="#inicio" aria-label="Breno Lira, voltar ao início">brenolira<span class="logo__dot">.</span></a>
 
       <nav class="nav" aria-label="Principal">
         <a class="nav__link" href="#projetos">Projetos</a>
@@ -152,10 +152,30 @@
         <a class="nav__link" href="#faq">Dúvidas</a>
       </nav>
 
-      <a class="btn btn--dark btn--sm" href="#contato">
-        <span class="btn__dot" aria-hidden="true"></span>Fale comigo
-      </a>
+      <div class="header__actions">
+        <a class="btn btn--dark btn--sm" href="#contato">
+          <span class="btn__dot" aria-hidden="true"></span>Fale comigo
+        </a>
+        <!-- Menu sanduíche: só aparece no celular -->
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menu" data-menu-toggle>
+          <span class="menu-toggle__line" aria-hidden="true"></span>
+          <span class="menu-toggle__line" aria-hidden="true"></span>
+          <span class="menu-toggle__line" aria-hidden="true"></span>
+        </button>
+      </div>
     </div>
+
+    <nav class="mobile-menu" id="mobile-menu" aria-label="Menu" hidden data-menu>
+      <a class="mobile-menu__link" href="#projetos">Projetos</a>
+      <a class="mobile-menu__link" href="#laboratorio">Laboratório</a>
+      <a class="mobile-menu__link" href="#servicos">Serviços</a>
+      <a class="mobile-menu__link" href="#plano">Plano mensal</a>
+      <a class="mobile-menu__link" href="#sobre">Sobre</a>
+      <a class="mobile-menu__link" href="#faq">Dúvidas</a>
+      <a class="btn btn--dark btn--md mobile-menu__cta" href="https://wa.me/5582991437312" target="_blank" rel="noopener">
+        <span class="btn__dot" aria-hidden="true"></span>Chamar no WhatsApp
+      </a>
+    </nav>
   </header>
 
   <main>

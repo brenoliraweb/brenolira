@@ -197,21 +197,65 @@ function initContactForm() {
 }
 
 /**
+ * Menu sanduíche do celular.
+ * Fecha ao tocar num link, ao tocar fora, com Esc ou ao voltar para a tela grande.
+ */
+function initMobileMenu() {
+  const toggle = document.querySelector('[data-menu-toggle]');
+  const menu = document.querySelector('[data-menu]');
+  if (!toggle || !menu) return;
+
+  function setOpen(open) {
+    menu.hidden = !open;
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+  }
+
+  function close() {
+    if (!menu.hidden) setOpen(false);
+  }
+
+  toggle.addEventListener('click', () => setOpen(menu.hidden));
+
+  menu.addEventListener('click', (event) => {
+    if (event.target.closest('a')) close();
+  });
+
+  document.addEventListener('click', (event) => {
+    if (!menu.contains(event.target) && !toggle.contains(event.target)) close();
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && !menu.hidden) {
+      close();
+      toggle.focus();
+    }
+  });
+
+  window.matchMedia('(min-width: 761px)').addEventListener('change', (event) => {
+    if (event.matches) close();
+  });
+}
+
+/**
  * Destaca no menu a seção que está na tela.
  */
 function initActiveNav() {
-  const links = document.querySelectorAll('.nav__link');
+  const links = document.querySelectorAll('.nav__link, .mobile-menu__link');
   if (!links.length || !('IntersectionObserver' in window)) return;
 
-  const linkById = new Map();
-  links.forEach((link) => linkById.set(link.hash.slice(1), link));
+  // Uma seção pode ter link no menu do topo e no do celular
+  const linksById = new Map();
+  links.forEach((link) => {
+    const id = link.hash.slice(1);
+    linksById.set(id, [...(linksById.get(id) || []), link]);
+  });
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (!entry.isIntersecting) return;
       links.forEach((link) => link.classList.remove('is-active'));
-      const active = linkById.get(entry.target.id);
-      if (active) active.classList.add('is-active');
+      (linksById.get(entry.target.id) || []).forEach((link) => link.classList.add('is-active'));
     });
   }, { rootMargin: '-45% 0px -50% 0px' });
 
@@ -227,6 +271,7 @@ initIntro();
 initHeroGrid();
 initProcess();
 initFaq();
+initMobileMenu();
 initContactForm();
 initActiveNav();
 initYear();
