@@ -19,6 +19,6 @@ export function initContactForm() {
     if (message) lines.push('', message);
 
     const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(lines.join('\n'))}`;
-    window.open(url, '_blank', 'noopener');
+    window.location.href = url;
   });
 }
