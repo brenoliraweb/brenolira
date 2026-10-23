@@ -903,11 +903,17 @@ a.work__link:hover .work__media img {
   transform: scale(1.04);
 }
 
-.work__media--dark {
-  padding: 16px;
-  background-color: var(--color-dark);
-  background-image: radial-gradient(rgba(255, 255, 255, .08) 1px, transparent 1px);
+/* Projeto sob sigilo: mostra a logo do cliente centralizada */
+.work__media--logo {
+  background-color: #FFF8EC;
+  background-image: radial-gradient(rgba(140, 90, 40, .12) 1px, transparent 1px);
   background-size: 18px 18px;
+}
+
+.work__media--logo img {
+  width: 62%;
+  height: auto;
+  object-fit: contain;
 }
 
 .work__meta {
@@ -962,33 +968,6 @@ a.work__link:hover .work__arrow {
   font-size: 12px;
   font-weight: 500;
   white-space: nowrap;
-}
-
-/* Terminal (Rancho do Maia) */
-.terminal {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  width: 100%;
-  padding: 16px;
-  border-radius: 12px;
-  background: var(--color-dark-2);
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, .06);
-  font-size: 12px;
-}
-
-.terminal__line {
-  display: flex;
-  gap: 8px;
-  color: #9A9AA0;
-}
-
-.terminal__line--done {
-  color: #FFFFFF;
-}
-
-.terminal__muted {
-  color: #8A8A90;
 }
 
 /* ---------- Laboratório ---------- */
