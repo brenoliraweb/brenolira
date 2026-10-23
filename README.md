@@ -41,4 +41,4 @@ O endereço oficial hoje é `https://brenolira.vercel.app`. Quando o domínio (p
 
 Depois, cadastre o site no [Google Search Console](https://search.google.com/search-console) e envie o `sitemap.xml`.
 
-Ícones: o original é o `favicon.svg`. Os PNGs em `assets/icons/` e o `favicon.ico` são gerados a partir dele.
+Ícones: "bl." na fonte Montserrat, igual ao logo. Os PNGs em `assets/icons/` e o `favicon.ico` saem da versão de 512 px (`assets/icons/icon-512.png`).
