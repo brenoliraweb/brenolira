@@ -424,16 +424,16 @@ textarea {
 
 .intro__part {
   opacity: 0;
-  animation: intro-part .55s cubic-bezier(.16, 1, .3, 1) both;
+  animation: intro-part .8s cubic-bezier(.16, 1, .3, 1) both;
 }
 
 .intro__part:nth-child(2) {
-  animation-delay: .1s;
+  animation-delay: .2s;
 }
 
 .intro__part--accent {
   color: var(--color-accent);
-  animation-delay: .2s;
+  animation-delay: .4s;
 }
 
 .intro__bar {
@@ -451,28 +451,28 @@ textarea {
   background: var(--color-accent);
   transform: scaleX(0);
   transform-origin: left;
-  animation: intro-bar .7s cubic-bezier(.65, 0, .35, 1) .3s both;
+  animation: intro-bar 1.4s cubic-bezier(.65, 0, .35, 1) .5s both;
 }
 
 .intro__caption {
   color: #8A8A92;
   font-family: var(--font-mono);
   font-size: 13px;
-  animation: intro-fade .5s ease .5s both;
+  animation: intro-fade .7s ease .9s both;
 }
 
 /* Saída */
 .is-leaving .intro__stage {
-  animation: intro-stage-out .25s ease-in both;
+  animation: intro-stage-out .35s ease-in both;
 }
 
 .is-leaving .intro__panel {
   will-change: transform;
-  animation: intro-lift .8s cubic-bezier(.83, 0, .17, 1) .15s both;
+  animation: intro-lift 1.1s cubic-bezier(.83, 0, .17, 1) .2s both;
 }
 
 .is-leaving .intro__panel::after {
-  animation: intro-seam .8s linear .15s both;
+  animation: intro-seam 1.1s linear .2s both;
 }
 
 /* Hero entrando por baixo da cortina */
@@ -484,11 +484,11 @@ textarea {
   opacity: 0;
 }
 
-.is-leaving .hero__title   { animation: intro-rise .8s cubic-bezier(.16, 1, .3, 1) .5s both; }
-.is-leaving .hero__lead    { animation: intro-rise .8s cubic-bezier(.16, 1, .3, 1) .6s both; }
-.is-leaving .chips         { animation: intro-rise .8s cubic-bezier(.16, 1, .3, 1) .7s both; }
-.is-leaving .hero__actions { animation: intro-rise .8s cubic-bezier(.16, 1, .3, 1) .8s both; }
-.is-leaving .header        { animation: intro-fade .6s ease .75s both; }
+.is-leaving .hero__title   { animation: intro-rise .9s cubic-bezier(.16, 1, .3, 1) .7s both; }
+.is-leaving .hero__lead    { animation: intro-rise .9s cubic-bezier(.16, 1, .3, 1) .8s both; }
+.is-leaving .chips         { animation: intro-rise .9s cubic-bezier(.16, 1, .3, 1) .9s both; }
+.is-leaving .hero__actions { animation: intro-rise .9s cubic-bezier(.16, 1, .3, 1) 1s both; }
+.is-leaving .header        { animation: intro-fade .7s ease 1s both; }
 
 @keyframes intro-part {
   from { opacity: 0; transform: translateY(.6em); }

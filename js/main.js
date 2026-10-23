@@ -39,8 +39,8 @@ function initIntro() {
   const root = document.documentElement;
   if (!root.classList.contains('is-intro')) return;
 
-  const ENTER_TIME = 1250; // barra cheia (1s) + pausa com a marca completa
-  const LEAVE_TIME = 1600; // até o último elemento do hero terminar de entrar
+  const ENTER_TIME = 2400; // barra cheia (1,9s) + pausa com a marca completa
+  const LEAVE_TIME = 2000; // até o último elemento do hero terminar de entrar
   const SKIP_EVENTS = ['pointerdown', 'keydown', 'wheel', 'touchstart'];
   let leaving = false;
 
