@@ -30,25 +30,18 @@ const PROCESS_STEPS = [
   }
 ];
 
-/**
- * Abertura: a marca entra, a barra enche, a cortina sobe.
- * Qualquer clique, tecla ou rolagem pula direto para a saída.
- * Usa tempo fixo (e não animationend) para nunca travar a tela.
- */
 function initIntro() {
   const root = document.documentElement;
   if (!root.classList.contains('is-intro')) return;
 
-  const ENTER_TIME = 2400; // barra cheia (1,9s) + pausa com a marca completa
-  const LEAVE_TIME = 2000; // até o último elemento do hero terminar de entrar
+  const ENTER_TIME = 2400;
+  const LEAVE_TIME = 2000;
   const SKIP_EVENTS = ['pointerdown', 'keydown', 'wheel', 'touchstart'];
   let leaving = false;
 
   try {
     sessionStorage.setItem('intro', 'visto');
-  } catch (error) {
-    // Sem sessionStorage a abertura só toca de novo; nada quebra.
-  }
+  } catch (error) {}
 
   function finish() {
     root.classList.remove('is-intro', 'is-leaving');
@@ -67,10 +60,6 @@ function initIntro() {
   setTimeout(leave, ENTER_TIME);
 }
 
-/**
- * Preenche o fundo do hero com as células que acendem no hover.
- * Só cria células suficientes para cobrir a tela atual.
- */
 function initHeroGrid() {
   const grid = document.querySelector('.hero__grid');
   if (!grid) return;
@@ -103,9 +92,6 @@ function initHeroGrid() {
   fill();
 }
 
-/**
- * Etapas da seção "Como funciona".
- */
 function initProcess() {
   const root = document.querySelector('[data-process]');
   if (!root) return;
@@ -154,9 +140,6 @@ function initProcess() {
   render();
 }
 
-/**
- * Deixa só uma pergunta aberta por vez.
- */
 function initFaq() {
   const items = document.querySelectorAll('[data-faq] details');
 
@@ -170,9 +153,6 @@ function initFaq() {
   });
 }
 
-/**
- * Monta a mensagem do formulário e abre o WhatsApp.
- */
 function initContactForm() {
   const form = document.querySelector('[data-contact-form]');
   if (!form) return;
@@ -196,10 +176,6 @@ function initContactForm() {
   });
 }
 
-/**
- * Menu sanduíche do celular.
- * Fecha ao tocar num link, ao tocar fora, com Esc ou ao voltar para a tela grande.
- */
 function initMobileMenu() {
   const toggle = document.querySelector('[data-menu-toggle]');
   const menu = document.querySelector('[data-menu]');
@@ -237,14 +213,10 @@ function initMobileMenu() {
   });
 }
 
-/**
- * Destaca no menu a seção que está na tela.
- */
 function initActiveNav() {
   const links = document.querySelectorAll('.nav__link, .mobile-menu__link');
   if (!links.length || !('IntersectionObserver' in window)) return;
 
-  // Uma seção pode ter link no menu do topo e no do celular
   const linksById = new Map();
   links.forEach((link) => {
     const id = link.hash.slice(1);

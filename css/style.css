@@ -1,19 +1,5 @@
-/* ==========================================================================
-   brenolira.dev
-   1. Variáveis
-   2. Base
-   3. Utilitários
-   4. Componentes (botões, links, tags)
-   5. Cabeçalho
-   6. Seções
-   7. Rodapé
-   8. Responsivo
-   ========================================================================== */
 
-/* 1. Variáveis
-   ========================================================================== */
 :root {
-  /* Cores */
   --color-bg: #FFFFFF;
   --color-ink: #111111;
   --color-text: #55555C;
@@ -38,12 +24,10 @@
   --color-dark-text: #C4C4C8;
   --color-dark-muted: #A1A1A8;
 
-  /* Tipografia */
   --font-display: "Montserrat", system-ui, sans-serif;
   --font-body: "Inter", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
 
-  /* Layout */
   --container: 1160px;
   --gutter: clamp(20px, 5vw, 40px);
   --section-space: clamp(88px, 11vw, 150px);
@@ -53,8 +37,6 @@
   --ease: cubic-bezier(.4, 0, .2, 1);
 }
 
-/* 2. Base
-   ========================================================================== */
 *,
 *::before,
 *::after {
@@ -123,8 +105,6 @@ textarea {
   top: 16px;
 }
 
-/* 3. Utilitários
-   ========================================================================== */
 .container {
   width: 100%;
   max-width: var(--container);
@@ -156,10 +136,6 @@ textarea {
   box-shadow: 0 24px 48px rgba(17, 17, 17, .08);
 }
 
-/* 4. Componentes
-   ========================================================================== */
-
-/* Botões */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -290,7 +266,6 @@ textarea {
   cursor: default;
 }
 
-/* Links */
 .link-arrow {
   display: inline-flex;
   align-items: center;
@@ -319,7 +294,6 @@ textarea {
   font-weight: 600;
 }
 
-/* Tags */
 .tag {
   align-self: flex-start;
   padding: 4px 10px;
@@ -343,7 +317,6 @@ textarea {
   color: var(--color-ink);
 }
 
-/* Títulos de cards */
 .card-title {
   margin-top: 6px;
   font-family: var(--font-display);
@@ -358,10 +331,6 @@ textarea {
   font-size: 15px;
 }
 
-/* Abertura
-   Cortina escura que mostra a marca, sobe e revela o hero.
-   O <head> liga .is-intro; o main.js liga .is-leaving e depois limpa tudo.
-   ========================================================================== */
 .intro {
   position: fixed;
   inset: 0;
@@ -392,7 +361,6 @@ textarea {
   background-size: 64px 64px;
 }
 
-/* Fio de luz na borda de baixo enquanto a cortina sobe */
 .intro__panel::after {
   content: "";
   position: absolute;
@@ -461,7 +429,6 @@ textarea {
   animation: intro-fade .7s ease .9s both;
 }
 
-/* Saída */
 .is-leaving .intro__stage {
   animation: intro-stage-out .35s ease-in both;
 }
@@ -475,7 +442,6 @@ textarea {
   animation: intro-seam 1.1s linear .2s both;
 }
 
-/* Hero entrando por baixo da cortina */
 .is-intro .header,
 .is-intro .hero__title,
 .is-intro .hero__lead,
@@ -523,8 +489,6 @@ textarea {
   to   { opacity: 1; transform: none; }
 }
 
-/* 5. Cabeçalho
-   ========================================================================== */
 .header {
   position: sticky;
   top: 0;
@@ -554,7 +518,6 @@ textarea {
   gap: 6px;
 }
 
-/* ---------- Menu sanduíche (celular) ---------- */
 .menu-toggle {
   position: relative;
   display: none;
@@ -580,7 +543,6 @@ textarea {
   transition: transform .3s var(--ease), opacity .2s var(--ease);
 }
 
-/* Aberto: as linhas de cima e de baixo viram um X e a do meio some */
 .menu-toggle[aria-expanded="true"] .menu-toggle__line:nth-child(1) {
   transform: translateY(6px) rotate(45deg);
 }
@@ -593,7 +555,6 @@ textarea {
   transform: translateY(-6px) rotate(-45deg);
 }
 
-/* Flutua sobre a página, logo abaixo da barra, sem empurrar o conteúdo */
 .mobile-menu {
   position: absolute;
   top: calc(100% + 8px);
@@ -684,8 +645,6 @@ textarea {
   color: var(--color-ink);
 }
 
-/* 6. Seções
-   ========================================================================== */
 .section {
   padding: var(--section-space) var(--gutter) 0;
 }
@@ -772,7 +731,6 @@ textarea {
   color: var(--color-teal-text);
 }
 
-/* Layout em duas colunas (serviços, dúvidas, contato) */
 .split {
   display: flex;
   flex-wrap: wrap;
@@ -804,7 +762,6 @@ textarea {
   min-width: 0;
 }
 
-/* ---------- Hero ---------- */
 .hero {
   position: relative;
   display: flex;
@@ -887,7 +844,6 @@ textarea {
   pointer-events: auto;
 }
 
-/* Chips flutuantes */
 .chips {
   position: absolute;
   inset: 0;
@@ -946,8 +902,6 @@ textarea {
   50%      { translate: 0 -8px; }
 }
 
-/* ---------- Projetos ----------
-   Três cards iguais lado a lado: imagem em cima, nome e uma linha embaixo. */
 .works {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -998,7 +952,6 @@ a.work__link:hover .work__media img {
   transform: scale(1.04);
 }
 
-/* Projeto sob sigilo: mostra a logo do cliente centralizada */
 .work__media--logo {
   background-color: #FFF8EC;
   background-image: radial-gradient(rgba(140, 90, 40, .12) 1px, transparent 1px);
@@ -1065,8 +1018,6 @@ a.work__link:hover .work__arrow {
   white-space: nowrap;
 }
 
-/* ---------- Laboratório ---------- */
-
 .lab {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
@@ -1101,7 +1052,6 @@ a.work__link:hover .work__arrow {
   font-size: 12px;
 }
 
-/* ---------- Serviços ---------- */
 .services {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
@@ -1139,7 +1089,6 @@ a.work__link:hover .work__arrow {
   color: var(--color-mint);
 }
 
-/* ---------- Como funciona ---------- */
 .process {
   display: flex;
   flex-direction: column;
@@ -1308,8 +1257,6 @@ a.work__link:hover .work__arrow {
   gap: 8px;
 }
 
-/* ---------- Plano mensal ----------
-   Um bloco escuro só: apresentação à esquerda, o que está incluso à direita. */
 .plan {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
@@ -1409,7 +1356,6 @@ a.work__link:hover .work__arrow {
   line-height: 1.5;
 }
 
-/* ---------- Sobre ---------- */
 .about {
   display: flex;
   flex-wrap: wrap;
@@ -1456,7 +1402,6 @@ a.work__link:hover .work__arrow {
   object-fit: cover;
 }
 
-/* Com foto, a moldura não precisa de espaço interno */
 .about__photo:has(img) {
   padding: 0;
 }
@@ -1538,7 +1483,6 @@ a.work__link:hover .work__arrow {
   gap: 4px 24px;
 }
 
-/* ---------- Dúvidas ---------- */
 .faq {
   display: flex;
   flex-direction: column;
@@ -1568,7 +1512,6 @@ a.work__link:hover .work__arrow {
   display: none;
 }
 
-/* Ícone + / − desenhado com CSS */
 .faq__icon {
   position: relative;
   flex: none;
@@ -1618,7 +1561,6 @@ a.work__link:hover .work__arrow {
   font-size: 16px;
 }
 
-/* ---------- Contato ---------- */
 .form {
   display: flex;
   flex-basis: 440px;
@@ -1676,7 +1618,6 @@ a.work__link:hover .work__arrow {
   cursor: pointer;
 }
 
-/* O rádio fica escondido; quem aparece é a pílula */
 .choice input {
   position: absolute;
   opacity: 0;
@@ -1717,8 +1658,6 @@ a.work__link:hover .work__arrow {
   resize: vertical;
 }
 
-/* 7. Rodapé
-   ========================================================================== */
 .footer {
   padding: clamp(56px, 7vw, 96px) var(--gutter) 32px;
   background-color: #0E0E10;
@@ -1849,8 +1788,6 @@ a.work__link:hover .work__arrow {
   font-size: 14px;
 }
 
-/* 8. Responsivo
-   ========================================================================== */
 @media (max-width: 860px) {
   .hero__stage {
     padding: 0;

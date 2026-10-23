@@ -3,9 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- SEO
-       O endereço oficial aparece em: canonical, og:url, og:image, JSON-LD,
-       robots.txt e sitemap.xml. Ao trocar de domínio, atualize todos. -->
   <title>Breno Lira | Desenvolvedor Web em Maceió – Sites e Sistemas</title>
   <meta name="description" content="Desenvolvedor web em Maceió (AL). Crio landing pages, sites, catálogos online e sistemas internos sob medida, rápidos no celular e fáceis de achar no Google.">
   <meta name="author" content="Breno Lira Rocha">
@@ -13,13 +10,11 @@
   <link rel="canonical" href="https://brenolira.dev/">
   <meta name="theme-color" content="#FFFFFF">
 
-  <!-- Ícones -->
   <link rel="icon" href="/favicon.ico" sizes="48x48">
   <link rel="icon" href="/assets/icons/favicon-32.png" type="image/png" sizes="32x32">
   <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Prévia ao compartilhar (WhatsApp, LinkedIn, Instagram...) -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Breno Lira">
   <meta property="og:locale" content="pt_BR">
@@ -35,7 +30,6 @@
   <meta name="twitter:description" content="Sites, sistemas e soluções com dados, feitos sob medida em Maceió.">
   <meta name="twitter:image" content="https://brenolira.dev/assets/img/og-image.jpg">
 
-  <!-- Dados estruturados: ajudam o Google a entender quem é você e o que oferece -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -101,8 +95,6 @@
   }
   </script>
 
-  <!-- Liga a abertura antes da primeira pintura. Pula com movimento reduzido,
-       link com âncora ou se já foi vista nesta sessão. -->
   <script>
     (function () {
       try {
@@ -112,7 +104,6 @@
         if (skip) return;
         var root = document.documentElement;
         root.classList.add('is-intro');
-        // Segurança: se o main.js não carregar, a abertura some sozinha.
         setTimeout(function () { root.classList.remove('is-intro', 'is-leaving'); }, 7000);
       } catch (e) {}
     })();
@@ -126,7 +117,6 @@
 </head>
 <body>
 
-  <!-- Abertura -->
   <div class="intro" aria-hidden="true">
     <div class="intro__panel">
       <div class="intro__stage">
@@ -139,7 +129,6 @@
 
   <a class="skip-link" href="#projetos">Pular para o conteúdo</a>
 
-  <!-- Cabeçalho -->
   <header class="header">
     <div class="header__bar">
       <a class="logo" href="#inicio" aria-label="Breno Lira, voltar ao início">brenolira<span class="logo__dot">.</span></a>
@@ -156,7 +145,6 @@
         <a class="btn btn--dark btn--sm" href="#contato">
           <span class="btn__dot" aria-hidden="true"></span>Fale comigo
         </a>
-        <!-- Menu sanduíche: só aparece no celular -->
         <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menu" data-menu-toggle>
           <span class="menu-toggle__line" aria-hidden="true"></span>
           <span class="menu-toggle__line" aria-hidden="true"></span>
@@ -180,7 +168,6 @@
 
   <main>
 
-    <!-- Hero -->
     <section class="hero" id="inicio">
       <div class="hero__grid" aria-hidden="true"></div>
 
@@ -211,7 +198,6 @@
       </div>
     </section>
 
-    <!-- Projetos -->
     <section class="section" id="projetos">
       <div class="container">
         <header class="section-head section-head--center">
@@ -253,7 +239,6 @@
 
           <article class="work">
             <div class="work__link">
-              <!-- Sistema sob contrato de sigilo: no lugar da captura, a logo do cliente -->
               <div class="work__media work__media--logo">
                 <img src="assets/img/rancho-do-maia-logo.webp" width="367" height="184" loading="lazy" decoding="async" alt="Logo do Rancho do Maia, edição Texas: letreiro em verde-água e rosa com chapéu de cowboy.">
               </div>
@@ -270,7 +255,6 @@
       </div>
     </section>
 
-    <!-- Laboratório -->
     <section class="section section--band section--dots" id="laboratorio">
       <div class="container">
         <header class="section-head section-head--split">
@@ -315,7 +299,6 @@
       </div>
     </section>
 
-    <!-- Serviços -->
     <section class="section" id="servicos">
       <div class="container split">
         <header class="split__aside section-head">
@@ -372,7 +355,6 @@
       </div>
     </section>
 
-    <!-- Como funciona -->
     <section class="section section--band section--dots-teal" id="processo">
       <div class="container container--narrow">
         <header class="section-head section-head--center">
@@ -422,7 +404,6 @@
       </div>
     </section>
 
-    <!-- Plano mensal -->
     <section class="section" id="plano">
       <div class="container">
         <div class="plan">
@@ -469,7 +450,6 @@
       </div>
     </section>
 
-    <!-- Sobre -->
     <section class="section" id="sobre">
       <div class="container about">
         <div class="about__media">
@@ -504,7 +484,6 @@
       </div>
     </section>
 
-    <!-- Dúvidas -->
     <section class="section" id="faq">
       <div class="container split">
         <header class="split__aside section-head">
@@ -538,7 +517,6 @@
       </div>
     </section>
 
-    <!-- Contato -->
     <section class="section section--last" id="contato">
       <div class="container split">
         <header class="split__aside split__aside--wide section-head">
@@ -574,7 +552,6 @@
 
   </main>
 
-  <!-- Rodapé -->
   <footer class="footer" id="curriculo">
     <div class="container footer__inner">
       <div class="footer__top">
