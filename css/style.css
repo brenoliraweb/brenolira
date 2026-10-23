@@ -852,90 +852,86 @@ textarea {
 }
 
 /* ---------- Projetos ----------
-   A imagem é o destaque; embaixo só nome, uma linha e a seta. */
+   Três cards iguais lado a lado: imagem em cima, nome e uma linha embaixo. */
 .works {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(28px, 4vw, 48px) 24px;
-}
-
-.work--featured {
-  grid-column: 1 / -1;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
 }
 
 .work__link {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  height: 100%;
+  padding: 10px;
+  border-radius: 22px;
+  background: #FFFFFF;
+  box-shadow: 0 0 0 1px rgba(17, 17, 17, .07);
   color: inherit;
   text-decoration: none;
+  transition: transform .35s ease, box-shadow .35s ease;
 }
 
 .work__link:hover {
   color: inherit;
 }
 
-/* Moldura colorida com a captura entrando por baixo */
+a.work__link:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 0 1px rgba(17, 17, 17, .07), 0 18px 40px rgba(17, 17, 17, .08);
+}
+
 .work__media {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
   overflow: hidden;
-  aspect-ratio: 4 / 3;
-  padding: clamp(24px, 4vw, 48px) clamp(24px, 4vw, 48px) 0;
-  border-radius: 28px;
-}
-
-.work--featured .work__media {
-  aspect-ratio: 2 / 1;
-  padding: clamp(24px, 5vw, 64px) clamp(24px, 8vw, 120px) 0;
-}
-
-.work__media--teal { background: var(--color-teal-soft); }
-.work__media--sand { background: var(--color-sand); }
-
-.work__media--dark {
-  align-items: center;
-  padding-bottom: clamp(24px, 4vw, 48px);
-  background-color: var(--color-dark);
-  background-image: radial-gradient(rgba(255, 255, 255, .08) 1px, transparent 1px);
-  background-size: 22px 22px;
+  aspect-ratio: 16 / 9;
+  border-radius: 14px;
+  background: var(--color-sand);
 }
 
 .work__media img {
   width: 100%;
   height: 100%;
-  border-radius: 14px 14px 0 0;
-  box-shadow: 0 20px 50px rgba(17, 17, 17, .14);
   object-fit: cover;
   object-position: top;
   transition: transform .5s cubic-bezier(.16, 1, .3, 1);
 }
 
 a.work__link:hover .work__media img {
-  transform: translateY(-8px) scale(1.015);
+  transform: scale(1.04);
+}
+
+.work__media--dark {
+  padding: 16px;
+  background-color: var(--color-dark);
+  background-image: radial-gradient(rgba(255, 255, 255, .08) 1px, transparent 1px);
+  background-size: 18px 18px;
 }
 
 .work__meta {
   display: flex;
+  flex: 1;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 16px;
-  padding: 0 4px;
+  gap: 12px;
+  padding: 16px 8px 8px;
 }
 
 .work__title {
   font-family: var(--font-display);
-  font-size: clamp(20px, 2vw, 24px);
+  font-size: 18px;
   font-weight: 700;
-  letter-spacing: -.03em;
-  line-height: 1.2;
+  letter-spacing: -.02em;
+  line-height: 1.25;
 }
 
 .work__desc {
   margin-top: 4px;
   color: var(--color-muted);
-  font-size: 15px;
+  font-size: 14px;
+  line-height: 1.45;
 }
 
 .work__arrow {
@@ -943,49 +939,47 @@ a.work__link:hover .work__media img {
   flex: none;
   align-items: center;
   justify-content: center;
-  width: 44px;
-  height: 44px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
-  box-shadow: inset 0 0 0 1.5px #E2E2DF;
+  background: #F2F2F0;
   color: var(--color-ink);
-  transition: background-color .25s ease, color .25s ease, box-shadow .25s ease, transform .25s ease;
+  transition: background-color .25s ease, color .25s ease, transform .25s ease;
 }
 
 a.work__link:hover .work__arrow {
   background: var(--color-ink);
-  box-shadow: none;
   color: #FFFFFF;
   transform: rotate(45deg);
 }
 
 .work__badge {
   flex: none;
-  margin-top: 4px;
-  padding: 4px 12px;
+  padding: 4px 10px;
   border-radius: var(--radius-pill);
   background: #F2F2F0;
   color: var(--color-muted);
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 500;
+  white-space: nowrap;
 }
 
 /* Terminal (Rancho do Maia) */
 .terminal {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 8px;
   width: 100%;
-  max-width: 380px;
-  padding: 22px;
-  border-radius: 16px;
+  padding: 16px;
+  border-radius: 12px;
   background: var(--color-dark-2);
   box-shadow: 0 0 0 1px rgba(255, 255, 255, .06);
-  font-size: 13px;
+  font-size: 12px;
 }
 
 .terminal__line {
   display: flex;
-  gap: 10px;
+  gap: 8px;
   color: #9A9AA0;
 }
 
@@ -1658,11 +1652,8 @@ a.work__link:hover .work__arrow {
 
   .works {
     grid-template-columns: minmax(0, 1fr);
-  }
-
-  .work--featured .work__media {
-    aspect-ratio: 4 / 3;
-    padding: 24px 24px 0;
+    max-width: 520px;
+    margin: 0 auto;
   }
 }
 
