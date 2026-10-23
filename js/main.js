@@ -31,6 +31,43 @@ const PROCESS_STEPS = [
 ];
 
 /**
+ * Abertura: a marca entra, a barra enche, a cortina sobe.
+ * Qualquer clique, tecla ou rolagem pula direto para a saída.
+ * Usa tempo fixo (e não animationend) para nunca travar a tela.
+ */
+function initIntro() {
+  const root = document.documentElement;
+  if (!root.classList.contains('is-intro')) return;
+
+  const ENTER_TIME = 1250; // barra cheia (1s) + pausa com a marca completa
+  const LEAVE_TIME = 1600; // até o último elemento do hero terminar de entrar
+  const SKIP_EVENTS = ['pointerdown', 'keydown', 'wheel', 'touchstart'];
+  let leaving = false;
+
+  try {
+    sessionStorage.setItem('intro', 'visto');
+  } catch (error) {
+    // Sem sessionStorage a abertura só toca de novo; nada quebra.
+  }
+
+  function finish() {
+    root.classList.remove('is-intro', 'is-leaving');
+  }
+
+  function leave() {
+    if (leaving) return;
+    leaving = true;
+    SKIP_EVENTS.forEach((type) => window.removeEventListener(type, leave));
+    root.classList.add('is-leaving');
+    setTimeout(finish, LEAVE_TIME);
+  }
+
+  SKIP_EVENTS.forEach((type) => window.addEventListener(type, leave, { passive: true }));
+
+  setTimeout(leave, ENTER_TIME);
+}
+
+/**
  * Preenche o fundo do hero com as células que acendem no hover.
  * Só cria células suficientes para cobrir a tela atual.
  */
@@ -186,6 +223,7 @@ function initYear() {
   if (year) year.textContent = new Date().getFullYear();
 }
 
+initIntro();
 initHeroGrid();
 initProcess();
 initFaq();

@@ -12,6 +12,23 @@
   <meta property="og:description" content="Sites, sistemas e soluções com dados, feitos sob medida em Maceió.">
   <meta property="og:locale" content="pt_BR">
 
+  <!-- Liga a abertura antes da primeira pintura. Pula com movimento reduzido,
+       link com âncora ou se já foi vista nesta sessão. -->
+  <script>
+    (function () {
+      try {
+        var skip = !!location.hash ||
+          sessionStorage.getItem('intro') === 'visto' ||
+          matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (skip) return;
+        var root = document.documentElement;
+        root.classList.add('is-intro');
+        // Segurança: se o main.js não carregar, a abertura some sozinha.
+        setTimeout(function () { root.classList.remove('is-intro', 'is-leaving'); }, 5000);
+      } catch (e) {}
+    })();
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
@@ -19,6 +36,17 @@
   <script src="js/main.js" defer></script>
 </head>
 <body>
+
+  <!-- Abertura -->
+  <div class="intro" aria-hidden="true">
+    <div class="intro__panel">
+      <div class="intro__stage">
+        <p class="intro__logo"><span class="intro__part">breno</span><span class="intro__part">lira</span><span class="intro__part intro__part--accent">.dev</span></p>
+        <div class="intro__bar"><span class="intro__bar-fill"></span></div>
+        <p class="intro__caption">do pixel ao resultado</p>
+      </div>
+    </div>
+  </div>
 
   <a class="skip-link" href="#projetos">Pular para o conteúdo</a>
 

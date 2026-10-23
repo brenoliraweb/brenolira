@@ -358,6 +358,171 @@ textarea {
   font-size: 15px;
 }
 
+/* Abertura
+   Cortina escura que mostra a marca, sobe e revela o hero.
+   O <head> liga .is-intro; o main.js liga .is-leaving e depois limpa tudo.
+   ========================================================================== */
+.intro {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  display: none;
+  overflow: hidden;
+}
+
+.is-intro .intro {
+  display: block;
+}
+
+.is-intro:not(.is-leaving) {
+  overflow: hidden;
+}
+
+.intro__panel {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: var(--gutter);
+  background-color: #0E0E10;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, .035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, .035) 1px, transparent 1px);
+  background-position: center;
+  background-size: 64px 64px;
+}
+
+/* Fio de luz na borda de baixo enquanto a cortina sobe */
+.intro__panel::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-mint), transparent);
+  box-shadow: 0 0 24px 2px rgba(94, 234, 212, .45);
+  opacity: 0;
+}
+
+.intro__stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.intro__logo {
+  display: flex;
+  color: #FFFFFF;
+  font-family: var(--font-display);
+  font-size: clamp(44px, 9vw, 80px);
+  font-weight: 700;
+  letter-spacing: -.05em;
+  line-height: 1;
+}
+
+.intro__part {
+  opacity: 0;
+  animation: intro-part .55s cubic-bezier(.16, 1, .3, 1) both;
+}
+
+.intro__part:nth-child(2) {
+  animation-delay: .1s;
+}
+
+.intro__part--accent {
+  color: var(--color-accent);
+  animation-delay: .2s;
+}
+
+.intro__bar {
+  overflow: hidden;
+  width: 100%;
+  height: 3px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, .1);
+}
+
+.intro__bar-fill {
+  display: block;
+  height: 100%;
+  border-radius: 3px;
+  background: var(--color-accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: intro-bar .7s cubic-bezier(.65, 0, .35, 1) .3s both;
+}
+
+.intro__caption {
+  color: #8A8A92;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  animation: intro-fade .5s ease .5s both;
+}
+
+/* Saída */
+.is-leaving .intro__stage {
+  animation: intro-stage-out .25s ease-in both;
+}
+
+.is-leaving .intro__panel {
+  will-change: transform;
+  animation: intro-lift .8s cubic-bezier(.83, 0, .17, 1) .15s both;
+}
+
+.is-leaving .intro__panel::after {
+  animation: intro-seam .8s linear .15s both;
+}
+
+/* Hero entrando por baixo da cortina */
+.is-intro .header,
+.is-intro .hero__title,
+.is-intro .hero__lead,
+.is-intro .chips,
+.is-intro .hero__actions {
+  opacity: 0;
+}
+
+.is-leaving .hero__title   { animation: intro-rise .8s cubic-bezier(.16, 1, .3, 1) .5s both; }
+.is-leaving .hero__lead    { animation: intro-rise .8s cubic-bezier(.16, 1, .3, 1) .6s both; }
+.is-leaving .chips         { animation: intro-rise .8s cubic-bezier(.16, 1, .3, 1) .7s both; }
+.is-leaving .hero__actions { animation: intro-rise .8s cubic-bezier(.16, 1, .3, 1) .8s both; }
+.is-leaving .header        { animation: intro-fade .6s ease .75s both; }
+
+@keyframes intro-part {
+  from { opacity: 0; transform: translateY(.6em); }
+  to   { opacity: 1; transform: none; }
+}
+
+@keyframes intro-bar {
+  to { transform: scaleX(1); }
+}
+
+@keyframes intro-fade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes intro-stage-out {
+  to { opacity: 0; transform: translateY(-12px); }
+}
+
+@keyframes intro-lift {
+  to { transform: translateY(-101%); }
+}
+
+@keyframes intro-seam {
+  0%   { opacity: 0; }
+  25%  { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@keyframes intro-rise {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: none; }
+}
+
 /* 5. Cabeçalho
    ========================================================================== */
 .header {
@@ -1579,6 +1744,10 @@ textarea {
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  .intro {
+    display: none !important;
   }
 
   *,
