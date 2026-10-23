@@ -315,48 +315,47 @@
 
     <!-- Plano mensal -->
     <section class="section" id="plano">
-      <div class="container split">
-        <header class="split__aside section-head">
-          <p class="eyebrow">/plano-mensal</p>
-          <h2 class="section-title">Seu site cuidado, todo mês.</h2>
-          <p class="section-text">Os 30 dias de suporte acabam, o site continua. Com o plano mensal, você não precisa se preocupar com hospedagem, segurança ou atualizações.</p>
-          <a class="btn btn--dark btn--md plan__cta" href="#contato">
-            <span class="btn__dot" aria-hidden="true"></span>Quero saber mais
-          </a>
-        </header>
-
-        <div class="split__main plan">
+      <div class="container">
+        <div class="plan">
+          <div class="plan__intro">
+            <p class="eyebrow plan__eyebrow">/plano-mensal</p>
+            <h2 class="plan__heading">Seu site cuidado, todo mês.</h2>
+            <p class="plan__lead">Os 30 dias de suporte acabam, o site continua. Com o plano mensal, você não precisa se preocupar com hospedagem, segurança ou atualizações.</p>
+            <a class="btn btn--light btn--md plan__cta" href="#contato">
+              <span class="btn__dot" aria-hidden="true"></span>Quero saber mais
+            </a>
+            <p class="plan__note">O valor depende do tamanho do site e é combinado na proposta.</p>
+          </div>
           <ul class="plan__list">
             <li class="plan__item">
-              <span class="plan__icon"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+              <span class="plan__icon"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
               <div>
                 <h3 class="plan__title">Hospedagem e domínio</h3>
                 <p class="plan__text">O site fica no ar e eu cuido da renovação e das configurações.</p>
               </div>
             </li>
             <li class="plan__item">
-              <span class="plan__icon"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+              <span class="plan__icon"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
               <div>
                 <h3 class="plan__title">Segurança e cópias</h3>
                 <p class="plan__text">Certificado HTTPS ativo e cópias do site guardadas.</p>
               </div>
             </li>
             <li class="plan__item">
-              <span class="plan__icon"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+              <span class="plan__icon"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
               <div>
                 <h3 class="plan__title">Pequenas atualizações</h3>
                 <p class="plan__text">Troco textos, fotos, preços e contatos quando você precisar.</p>
               </div>
             </li>
             <li class="plan__item">
-              <span class="plan__icon"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+              <span class="plan__icon"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
               <div>
                 <h3 class="plan__title">Suporte direto</h3>
                 <p class="plan__text">Você fala comigo pelo WhatsApp, sem fila e sem chamado.</p>
               </div>
             </li>
           </ul>
-          <p class="plan__note">O valor depende do tamanho do site e é combinado na proposta.</p>
         </div>
       </div>
     </section>
@@ -432,23 +431,24 @@
         <header class="split__aside split__aside--wide section-head">
           <p class="eyebrow">/contato</p>
           <h2 class="section-title section-title--xl">Vamos tirar sua ideia do papel?</h2>
-          <p class="section-text">Preencha ao lado e o WhatsApp abre com a mensagem pronta. Você revisa antes de enviar.</p>
+          <p class="section-text">Preencha o formulário e o WhatsApp abre com a mensagem pronta. Você revisa antes de enviar.</p>
         </header>
 
         <form class="split__main form" data-contact-form>
           <label class="form__field">Seu nome
             <input class="form__input" type="text" name="nome" placeholder="Como posso te chamar?" autocomplete="name" required>
           </label>
-          <label class="form__field">O que você precisa
-            <select class="form__input" name="servico">
-              <option>Landing page</option>
-              <option>Site institucional</option>
-              <option>Catálogo online</option>
-              <option>Sistema interno</option>
-              <option>Plano mensal</option>
-              <option>Ainda não sei</option>
-            </select>
-          </label>
+          <fieldset class="form__field form__choices">
+            <legend class="form__legend">O que você precisa</legend>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="servico" value="Landing page" checked><span>Landing page</span></label>
+              <label class="choice"><input type="radio" name="servico" value="Site institucional"><span>Site institucional</span></label>
+              <label class="choice"><input type="radio" name="servico" value="Catálogo online"><span>Catálogo online</span></label>
+              <label class="choice"><input type="radio" name="servico" value="Sistema interno"><span>Sistema interno</span></label>
+              <label class="choice"><input type="radio" name="servico" value="Plano mensal"><span>Plano mensal</span></label>
+              <label class="choice"><input type="radio" name="servico" value="Ainda não sei"><span>Ainda não sei</span></label>
+            </div>
+          </fieldset>
           <label class="form__field">Conte um pouco
             <textarea class="form__input form__textarea" name="mensagem" rows="4" placeholder="Para quem é e o que precisa resolver."></textarea>
           </label>
