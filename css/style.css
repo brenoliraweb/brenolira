@@ -851,237 +851,135 @@ textarea {
   50%      { translate: 0 -8px; }
 }
 
-/* ---------- Projetos ---------- */
-.projects {
+/* ---------- Projetos ----------
+   A imagem é o destaque; embaixo só nome, uma linha e a seta. */
+.works {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(28px, 4vw, 48px) 24px;
 }
 
-.project {
+.work--featured {
+  grid-column: 1 / -1;
+}
+
+.work__link {
   display: flex;
   flex-direction: column;
   gap: 18px;
-  padding: clamp(24px, 2.6vw, 32px);
+  color: inherit;
+  text-decoration: none;
+}
+
+.work__link:hover {
+  color: inherit;
+}
+
+/* Moldura colorida com a captura entrando por baixo */
+.work__media {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  padding: clamp(24px, 4vw, 48px) clamp(24px, 4vw, 48px) 0;
   border-radius: 28px;
 }
 
-.project--featured {
-  grid-column: 1 / -1;
-  flex-direction: row;
-  flex-wrap: wrap;
+.work--featured .work__media {
+  aspect-ratio: 2 / 1;
+  padding: clamp(24px, 5vw, 64px) clamp(24px, 8vw, 120px) 0;
+}
+
+.work__media--teal { background: var(--color-teal-soft); }
+.work__media--sand { background: var(--color-sand); }
+
+.work__media--dark {
   align-items: center;
-  gap: clamp(24px, 3.4vw, 44px);
-  padding: clamp(24px, 3.4vw, 44px);
-  background: var(--color-teal-soft);
+  padding-bottom: clamp(24px, 4vw, 48px);
+  background-color: var(--color-dark);
+  background-image: radial-gradient(rgba(255, 255, 255, .08) 1px, transparent 1px);
+  background-size: 22px 22px;
 }
 
-.project--sand {
-  background: var(--color-sand);
-}
-
-.project--dark {
-  background: var(--color-dark);
-  color: #FFFFFF;
-}
-
-.project__info {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.project--featured .project__info {
-  flex: 1 1 300px;
-  min-width: 0;
-  gap: 14px;
-}
-
-.project__type {
-  color: var(--color-teal-dark);
-  font-size: 14px;
-  font-weight: 600;
-}
-
-.project--dark .project__type {
-  color: var(--color-mint);
-}
-
-.project__title {
-  font-family: var(--font-display);
-  font-size: clamp(24px, 2.2vw, 28px);
-  font-weight: 700;
-  letter-spacing: -.04em;
-  line-height: 1.1;
-}
-
-.project__title--lg {
-  font-size: clamp(26px, 3vw, 36px);
-  line-height: 1.08;
-}
-
-.project__desc {
-  color: var(--color-text);
-  font-size: 15px;
-}
-
-.project--featured .project__desc {
-  color: #3F5552;
-  font-size: 16px;
-}
-
-.project--dark .project__desc {
-  color: var(--color-dark-text);
-}
-
-.project__stack {
-  color: var(--color-teal-text);
-  font-size: 13px;
-}
-
-.project--sand .project__stack {
-  color: var(--color-sand-text);
-}
-
-.project--dark .project__stack {
-  color: var(--color-dark-muted);
-}
-
-.project__cta {
-  align-self: flex-start;
-  margin-top: 4px;
-}
-
-.project__result {
-  color: var(--color-ink);
-  font-size: 15px;
-  font-weight: 600;
-  line-height: 1.5;
-}
-
-.project__result-label {
-  margin-right: 6px;
-  padding: 2px 8px;
-  border-radius: var(--radius-pill);
-  background: rgba(13, 148, 136, .12);
-  color: var(--color-teal-dark);
-  font-family: var(--font-mono);
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: .04em;
-  text-transform: uppercase;
-  vertical-align: 1px;
-}
-
-.project--sand .project__result-label {
-  background: #FFFFFF;
-}
-
-.project--dark .project__result {
-  color: #FFFFFF;
-}
-
-.project--dark .project__result-label {
-  background: rgba(94, 234, 212, .14);
-  color: var(--color-mint);
-}
-
-
-.project__footer {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  margin-top: auto;
-}
-
-.project__note {
-  display: inline-flex;
-  align-items: center;
-  min-height: 44px;
-  color: var(--color-dark-muted);
-  font-size: 14px;
-}
-
-/* Janela de navegador (mockup) */
-.browser {
-  overflow: hidden;
-  border-radius: 16px;
-  background: #FFFFFF;
-  box-shadow: 0 20px 40px rgba(17, 17, 17, .08);
-}
-
-.browser--teal {
-  flex: 1.4 1 380px;
-  min-width: 0;
-  border-radius: 18px;
-  box-shadow: 0 24px 50px rgba(13, 148, 136, .16);
-}
-
-.browser__bar {
-  display: flex;
-  gap: 6px;
-  padding: 10px 12px;
-  border-bottom: 1px solid #EFEDE8;
-}
-
-.browser__bar span {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #E2DFD8;
-}
-
-.browser--teal .browser__bar {
-  padding: 12px 14px;
-  border-bottom-color: #EEF3F2;
-}
-
-.browser--teal .browser__bar span {
-  width: 9px;
-  height: 9px;
-  background: #DCE6E4;
-}
-
-.browser__screen {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  aspect-ratio: 16 / 10;
-  padding: 16px;
-  color: var(--color-muted);
-  font-size: 14px;
-  text-align: center;
-}
-
-.browser__screen--wide {
-  aspect-ratio: 16 / 9;
-  color: #5F6E6B;
-}
-
-.browser img {
+.work__media img {
   width: 100%;
-  height: auto;
-  aspect-ratio: 16 / 9;
+  height: 100%;
+  border-radius: 14px 14px 0 0;
+  box-shadow: 0 20px 50px rgba(17, 17, 17, .14);
   object-fit: cover;
   object-position: top;
+  transition: transform .5s cubic-bezier(.16, 1, .3, 1);
 }
 
-.browser--teal img {
-  aspect-ratio: 16 / 9;
+a.work__link:hover .work__media img {
+  transform: translateY(-8px) scale(1.015);
 }
 
-/* Terminal */
+.work__meta {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 0 4px;
+}
+
+.work__title {
+  font-family: var(--font-display);
+  font-size: clamp(20px, 2vw, 24px);
+  font-weight: 700;
+  letter-spacing: -.03em;
+  line-height: 1.2;
+}
+
+.work__desc {
+  margin-top: 4px;
+  color: var(--color-muted);
+  font-size: 15px;
+}
+
+.work__arrow {
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1.5px #E2E2DF;
+  color: var(--color-ink);
+  transition: background-color .25s ease, color .25s ease, box-shadow .25s ease, transform .25s ease;
+}
+
+a.work__link:hover .work__arrow {
+  background: var(--color-ink);
+  box-shadow: none;
+  color: #FFFFFF;
+  transform: rotate(45deg);
+}
+
+.work__badge {
+  flex: none;
+  margin-top: 4px;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  background: #F2F2F0;
+  color: var(--color-muted);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* Terminal (Rancho do Maia) */
 .terminal {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  gap: 8px;
-  aspect-ratio: 16 / 9;
-  padding: 20px;
+  gap: 12px;
+  width: 100%;
+  max-width: 380px;
+  padding: 22px;
   border-radius: 16px;
   background: var(--color-dark-2);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, .06);
   font-size: 13px;
 }
 
@@ -1758,8 +1656,13 @@ textarea {
     display: none;
   }
 
-  .project--featured {
-    grid-column: auto;
+  .works {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .work--featured .work__media {
+    aspect-ratio: 4 / 3;
+    padding: 24px 24px 0;
   }
 }
 

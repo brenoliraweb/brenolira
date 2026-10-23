@@ -111,60 +111,53 @@
           <p class="section-text">Projetos que já estão no ar e resolvendo problemas reais.</p>
         </header>
 
-        <div class="projects">
-          <article class="project project--featured lift">
-            <div class="project__info">
-              <p class="project__type">Landing page</p>
-              <h3 class="project__title project__title--lg">Hugo Monteiro Advocacia</h3>
-              <p class="project__desc">Quem procura advogado decide por confiança. A página explica cada área de atuação e constrói essa autoridade antes de pedir o contato.</p>
-              <p class="project__result"><span class="project__result-label">Resultado</span> Agendamento aberto direto no WhatsApp, sem formulário no meio.</p>
-              <p class="mono project__stack">HTML · CSS · JavaScript</p>
-              <a class="btn btn--dark btn--md project__cta" href="https://hugomonteiroadvocacia.com/" target="_blank" rel="noopener">
-                Ver site
-                <svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg>
-              </a>
-            </div>
-            <div class="browser browser--teal">
-              <div class="browser__bar" aria-hidden="true"><span></span><span></span><span></span></div>
-              <img src="assets/img/projeto-hugo-monteiro.webp" width="1280" height="720" loading="lazy" decoding="async" alt="Topo do site Hugo Monteiro Advocacia: fundo escuro com a estátua da justiça, título em dourado sobre direito trabalhista e previdenciário e botão para falar com o advogado.">
-            </div>
+        <div class="works">
+          <article class="work work--featured">
+            <a class="work__link" href="https://hugomonteiroadvocacia.com/" target="_blank" rel="noopener">
+              <div class="work__media work__media--teal">
+                <img src="assets/img/projeto-hugo-monteiro.webp" width="1280" height="720" loading="lazy" decoding="async" alt="Topo do site Hugo Monteiro Advocacia: fundo escuro com a estátua da justiça e título em dourado.">
+              </div>
+              <div class="work__meta">
+                <div>
+                  <h3 class="work__title">Hugo Monteiro Advocacia</h3>
+                  <p class="work__desc">Landing page · agendamento direto no WhatsApp</p>
+                </div>
+                <span class="work__arrow"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg></span>
+              </div>
+            </a>
           </article>
 
-          <article class="project project--sand lift">
-            <div class="project__info">
-              <p class="project__type">Catálogo online</p>
-              <h3 class="project__title">Lamel Moda Infantil</h3>
-              <p class="project__desc">O catálogo era enviado peça por peça, em foto, pelo WhatsApp.</p>
-            </div>
-            <div class="browser browser--sand">
-              <div class="browser__bar" aria-hidden="true"><span></span><span></span><span></span></div>
-              <img src="assets/img/projeto-lamel.webp" width="1280" height="720" loading="lazy" decoding="async" alt="Topo do catálogo Lamel Moda Infantil: faixa de avisos laranja, banner turquesa com o texto moda infantil e a fila de categorias em ícones circulares.">
-            </div>
-            <p class="project__result"><span class="project__result-label">Resultado</span> Mais de 500 produtos num link só, com o pedido fechando no WhatsApp.</p>
-            <div class="project__footer">
-              <span class="mono project__stack">JavaScript · API · Banco de dados</span>
-              <a class="link-arrow" href="https://lamel-moda-infantil.vercel.app/" target="_blank" rel="noopener">
-                Ver catálogo
-                <svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg>
-              </a>
-            </div>
+          <article class="work">
+            <a class="work__link" href="https://lamel-moda-infantil.vercel.app/" target="_blank" rel="noopener">
+              <div class="work__media work__media--sand">
+                <img src="assets/img/projeto-lamel.webp" width="1280" height="720" loading="lazy" decoding="async" alt="Topo do catálogo Lamel Moda Infantil: banner turquesa e categorias em ícones circulares.">
+              </div>
+              <div class="work__meta">
+                <div>
+                  <h3 class="work__title">Lamel Moda Infantil</h3>
+                  <p class="work__desc">Catálogo online · 500+ peças num link só</p>
+                </div>
+                <span class="work__arrow"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg></span>
+              </div>
+            </a>
           </article>
 
-          <article class="project project--dark lift">
-            <div class="project__info">
-              <p class="project__type">Sistemas internos</p>
-              <h3 class="project__title">Rancho do Maia</h3>
-              <p class="project__desc">Demandas espalhadas em conversa e arquivos buscados direto na pasta original do Drive.</p>
-            </div>
-            <div class="terminal mono">
-              <div class="terminal__line"><span class="text-mint">$</span>buscar "logo evento"</div>
-              <div class="terminal__line"><span class="terminal__muted">›</span>lendo Drive em modo seguro</div>
-              <div class="terminal__line terminal__line--done"><span class="text-mint">✓</span>arquivo entregue, pasta intacta</div>
-            </div>
-            <p class="project__result"><span class="project__result-label">Resultado</span> Um gestor de demandas e um buscador que entrega o arquivo sem abrir a pasta original.</p>
-            <div class="project__footer">
-              <span class="mono project__stack">JavaScript · Node.js · API · Google Drive</span>
-              <span class="project__note">Uso interno · ago/2026</span>
+          <article class="work">
+            <div class="work__link">
+              <div class="work__media work__media--dark">
+                <div class="terminal mono">
+                  <div class="terminal__line"><span class="text-mint">$</span>buscar "logo evento"</div>
+                  <div class="terminal__line"><span class="terminal__muted">›</span>lendo Drive em modo seguro</div>
+                  <div class="terminal__line terminal__line--done"><span class="text-mint">✓</span>arquivo entregue, pasta intacta</div>
+                </div>
+              </div>
+              <div class="work__meta">
+                <div>
+                  <h3 class="work__title">Rancho do Maia</h3>
+                  <p class="work__desc">Sistemas internos · demandas e busca no Drive</p>
+                </div>
+                <span class="work__badge">Uso interno</span>
+              </div>
             </div>
           </article>
         </div>
