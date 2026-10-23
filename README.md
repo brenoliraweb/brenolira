@@ -30,3 +30,15 @@ npx serve .
 ```
 
 O currículo tem duas páginas A4 fixas. Se adicionar muito conteúdo, confira se nada passou da borda.
+
+## SEO e domínio
+
+O endereço oficial hoje é `https://brenolira.vercel.app`. Quando o domínio (provavelmente `brenolira.dev`) estiver no ar, troque o endereço em:
+
+- `index.html`: canonical, `og:url`, `og:image`, `twitter:image` e o JSON-LD
+- `robots.txt` (linha do Sitemap)
+- `sitemap.xml`
+
+Depois, cadastre o site no [Google Search Console](https://search.google.com/search-console) e envie o `sitemap.xml`.
+
+Ícones: o original é o `favicon.svg`. Os PNGs em `assets/icons/` e o `favicon.ico` são gerados a partir dele.

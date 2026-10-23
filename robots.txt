@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /curriculo/
+
+Sitemap: https://brenolira.vercel.app/sitemap.xml

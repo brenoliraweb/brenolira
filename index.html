@@ -3,14 +3,104 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Breno Lira | Desenvolvedor em Maceió</title>
-  <meta name="description" content="Sites, sistemas e soluções com dados, feitos sob medida em Maceió. Portfólio de Breno Lira Rocha.">
+  <!-- SEO
+       O endereço oficial aparece em: canonical, og:url, og:image, JSON-LD,
+       robots.txt e sitemap.xml. Ao trocar de domínio, atualize todos. -->
+  <title>Breno Lira | Desenvolvedor Web em Maceió – Sites e Sistemas</title>
+  <meta name="description" content="Desenvolvedor web em Maceió (AL). Crio landing pages, sites, catálogos online e sistemas internos sob medida, rápidos no celular e fáceis de achar no Google.">
+  <meta name="author" content="Breno Lira Rocha">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://brenolira.vercel.app/">
   <meta name="theme-color" content="#FFFFFF">
 
+  <!-- Ícones -->
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/assets/icons/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <!-- Prévia ao compartilhar (WhatsApp, LinkedIn, Instagram...) -->
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Breno Lira">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:url" content="https://brenolira.vercel.app/">
   <meta property="og:title" content="Breno Lira | Do pixel ao resultado">
   <meta property="og:description" content="Sites, sistemas e soluções com dados, feitos sob medida em Maceió.">
-  <meta property="og:locale" content="pt_BR">
+  <meta property="og:image" content="https://brenolira.vercel.app/assets/img/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Breno Lira, desenvolvedor web em Maceió: do pixel ao resultado.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Breno Lira | Do pixel ao resultado">
+  <meta name="twitter:description" content="Sites, sistemas e soluções com dados, feitos sob medida em Maceió.">
+  <meta name="twitter:image" content="https://brenolira.vercel.app/assets/img/og-image.jpg">
+
+  <!-- Dados estruturados: ajudam o Google a entender quem é você e o que oferece -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://brenolira.vercel.app/#breno",
+        "name": "Breno Lira Rocha",
+        "alternateName": "Breno Lira",
+        "jobTitle": "Desenvolvedor Web",
+        "url": "https://brenolira.vercel.app/",
+        "image": "https://brenolira.vercel.app/assets/img/breno-retrato.webp",
+        "email": "mailto:dev.breno.lira@gmail.com",
+        "telephone": "+55-82-99143-7312",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Maceió",
+          "addressRegion": "AL",
+          "addressCountry": "BR"
+        },
+        "alumniOf": [
+          { "@type": "CollegeOrUniversity", "name": "Centro Universitário CESMAC" },
+          { "@type": "EducationalOrganization", "name": "SESI/SENAI – EBEP Carlos Guido Ferrario Lobo" }
+        ],
+        "knowsAbout": ["HTML", "CSS", "JavaScript", "Node.js", "Python", "PostgreSQL", "MySQL", "SEO"],
+        "sameAs": [
+          "https://www.linkedin.com/in/-brenolirarocha",
+          "https://github.com/brenoliraweb",
+          "https://www.instagram.com/brenolira.dev"
+        ]
+      },
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://brenolira.vercel.app/#servico",
+        "name": "Breno Lira – Desenvolvimento Web",
+        "url": "https://brenolira.vercel.app/",
+        "image": "https://brenolira.vercel.app/assets/img/og-image.jpg",
+        "description": "Landing pages, sites institucionais, catálogos online e sistemas internos feitos sob medida.",
+        "telephone": "+55-82-99143-7312",
+        "email": "dev.breno.lira@gmail.com",
+        "founder": { "@id": "https://brenolira.vercel.app/#breno" },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Maceió",
+          "addressRegion": "AL",
+          "addressCountry": "BR"
+        },
+        "areaServed": [
+          { "@type": "City", "name": "Maceió" },
+          { "@type": "Country", "name": "Brasil" }
+        ],
+        "serviceType": ["Landing page", "Site institucional", "Catálogo online", "Sistema interno", "Hospedagem e manutenção de sites"]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://brenolira.vercel.app/#site",
+        "url": "https://brenolira.vercel.app/",
+        "name": "Breno Lira",
+        "inLanguage": "pt-BR",
+        "publisher": { "@id": "https://brenolira.vercel.app/#breno" }
+      }
+    ]
+  }
+  </script>
 
   <!-- Liga a abertura antes da primeira pintura. Pula com movimento reduzido,
        link com âncora ou se já foi vista nesta sessão. -->
